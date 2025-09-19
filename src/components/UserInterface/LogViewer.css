@@ -1,0 +1,89 @@
+.log-toggle-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    z-index: 1000;
+}
+
+.log-window {
+    position: fixed;
+    top: 50px;
+    left: 10px;
+    width: 320px;
+    max-height: 60vh;
+    background: #1e1e1e;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.log-window h3 {
+    margin: 0;
+    padding: 10px;
+    background: #222;
+    border-bottom: 1px solid #444;
+    font-size: 16px;
+}
+
+.log-messages {
+    flex: 1;
+    padding: 8px;
+    font-family: monospace;
+    font-size: 13px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.log-messages::-webkit-scrollbar {
+    display: none;
+}
+
+.log-item {
+    margin-bottom: 6px;
+    display: flex;
+    gap: 8px;
+}
+
+.log-time {
+    color: #888;
+    min-width: 60px;
+}
+
+.log-text {
+    flex: 1;
+}
+
+.log-empty {
+    color: #aaa;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* подсветка по статусу */
+.log-item.info .log-text {
+    color: #2196f3;
+}
+
+.log-item.success .log-text {
+    color: #4caf50;
+}
+
+.log-item.warning .log-text {
+    color: #ffc107;
+}
+
+.log-item.error .log-text {
+    color: #f44336;
+}
