@@ -16,7 +16,7 @@ const MainMachine: React.FC = () => {
     const [prevCondition, setPrevCondition] = useState<ConditionEnum>(condition);
     const [isAnimationTime, setAnimationTime] = useState(false);
 
-
+    const frame = (path: string) => `${import.meta.env.BASE_URL}frames/${path}`;
 
     const stepAnimation = useMemo(() => {
 
@@ -31,13 +31,13 @@ const MainMachine: React.FC = () => {
                             return [];
                         case ConditionEnum.sleeping:
                             return [
-                                "/frames/cat_left_step_1.png",
-                                "/frames/cat_left_step_2.png",
+                                frame("cat_left_step_1.png"),
+                                frame("cat_left_step_2.png"),
                             ];
                         case ConditionEnum.eats:
                             return [
-                                "/frames/cat_right_step_1.png",
-                                "/frames/cat_right_step_2.png",
+                                frame("cat_right_step_1.png"),
+                                frame("cat_right_step_2.png"),
                             ];
                     }
                     break;
@@ -45,18 +45,18 @@ const MainMachine: React.FC = () => {
                     switch (condition) {
                         case ConditionEnum.playing:
                             return [
-                                "/frames/cat_left_step_1.png",
-                                "/frames/cat_left_step_2.png",
+                                frame("cat_left_step_1.png"),
+                                frame("cat_left_step_2.png"),
                             ];
                         case ConditionEnum.free:
                             return [
-                                "/frames/cat_left_step_1.png",
-                                "/frames/cat_left_step_2.png",
+                                frame("cat_left_step_1.png"),
+                                frame("cat_left_step_2.png"),
                             ];
                         case ConditionEnum.sleeping:
                             return [
-                                "/frames/cat_left_step_1.png",
-                                "/frames/cat_left_step_2.png",
+                                frame("cat_left_step_1.png"),
+                                frame("cat_left_step_2.png"),
                             ];
                         case ConditionEnum.eats:
                             return [];
@@ -66,23 +66,23 @@ const MainMachine: React.FC = () => {
                     switch (condition) {
                         case ConditionEnum.playing:
                             return [
-                                "/frames/cat_right_step_1.png",
-                                "/frames/cat_right_step_2.png",
+                                frame("cat_right_step_1.png"),
+                                frame("cat_right_step_2.png"),
                             ];
                         case ConditionEnum.free:
                             return [
-                                "/frames/cat_right_step_1.png",
-                                "/frames/cat_right_step_2.png",
+                                frame("cat_right_step_1.png"),
+                                frame("cat_right_step_2.png"),
                             ];
                         case ConditionEnum.sleeping:
                             return [
-                                "/frames/cat_right_step_1.png",
-                                "/frames/cat_right_step_2.png",
+                                frame("cat_right_step_1.png"),
+                                frame("cat_right_step_2.png"),
                             ];
                         case ConditionEnum.eats:
                             return [
-                                "/frames/cat_right_step_1.png",
-                                "/frames/cat_right_step_2.png",
+                                frame("cat_right_step_1.png"),
+                                frame("cat_right_step_2.png"),
                             ];
                     }
                     break;
@@ -121,28 +121,28 @@ const MainMachine: React.FC = () => {
         switch (condition) {
             case ConditionEnum.free:
                 return [
-                    "/frames/cat_static_stand.png"
+                    frame("cat_static_stand.png")
                 ];
             case ConditionEnum.eats:
                 return [
-                    "/frames/cat_eat_1.png",
-                    "/frames/cat_eat_2.png",
+                    frame("cat_eat_1.png"),
+                    frame("cat_eat_2.png"),
                 ];
             case ConditionEnum.playing:
                 return [
-                    "/frames/cat_play_1.png",
-                    "/frames/cat_play_2.png",
+                    frame("cat_play_1.png"),
+                    frame("cat_play_2.png"),
                 ];
             case ConditionEnum.sleeping:
                 return [
-                    "/frames/cat_sleep_1.png",
-                    "/frames/cat_sleep_2.png",
-                    "/frames/cat_sleep_3.png",
-                    "/frames/cat_sleep_4.png",
+                    frame("cat_sleep_1.png"),
+                    frame("cat_sleep_2.png"),
+                    frame("cat_sleep_3.png"),
+                    frame("cat_sleep_4.png"),
                 ];
             default:
                 return [
-                    "/frames/cat_static_stand.png"
+                    frame("cat_static_stand.png")
                 ];
         }
     }, [condition, isAnimationTime, prevCondition, stepAnimation])
