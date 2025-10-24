@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux'
 import { setSignalTable } from './components/MainMachine/slice/MainMachineSlice'
 import TimerDisplay from './components/UserInterface/TimerDisplay'
 // import UserSignalsButtons from './components/UserInterface/SignalsButtons'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const frames = [
   // Статичный кот
   "/frames/cat_static_stand.png",
@@ -43,12 +44,12 @@ const App = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  useEffect(() => {
-    frames.forEach((src) => {
-      const img = new Image();
-      img.src = src;
-    });
-  }, []);
+  // useEffect(() => {
+  //   frames.forEach((src) => {
+  //     const img = new Image();
+  //     img.src = src;
+  //   });
+  // }, []);
 
   return (
     <div>

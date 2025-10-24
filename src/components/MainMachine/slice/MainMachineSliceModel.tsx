@@ -2,7 +2,6 @@ export enum InputUserSignalsEnum {
     putToBed = 0,
     play = 1,
     feed = 2,
-
 }
 
 export enum InputSystemSignalsEnum {
@@ -21,16 +20,10 @@ export enum ConditionEnum {
     free = 3
 }
 
-export enum OutputSignalEnum {
-
-
-    export
-
-
-}
 export type OutputType = {
     newCondition: ConditionEnum
     outputSignal: string;
+    probability: number;
     funs?: (() => void)[];
 }
 
@@ -38,7 +31,6 @@ export interface LogMessage {
     time: number;
     status: ConditionEnum;
     message: string;
-
 }
 
 export interface MainMachineModelState {
